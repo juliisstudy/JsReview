@@ -1,3 +1,100 @@
+"use strict"; // this code works the modern way
+
+//interact with users,alert,prompt,confirm
+alert("hello");
+let age = prompt('how old are you?',30);//title and default value
+alert('You are ${age} years old');
+let isHuman = confirm("Are you human?");
+//shows a window with the a question and ok, cancel
+alert(isHuman);
+
+//Type conversions
+let value = true;
+alert(typeof value);
+
+value = String(value);
+alert(typeof value);
+
+let str = "123";
+let num = Number(str);
+
+Boolean(1);
+Boolean("hello");
+
+//unary plus covert it into a number
+alert(+true);
+
+//if statments
+let numOfClothes = prompt('How many clothes do you have?',100);
+if (numOfClothes < 10){
+    alert("too few");
+}else if(numOfClothes> 150){
+    alert("too many")
+}else{
+    alert("you have 100 clothes")
+}
+
+let accessAllowed;
+if (age > 18){
+    accessAllowed = true;
+}else {
+    accessAllowed = false;
+}
+alert(accessAllowed);
+
+//shorter way
+let accessAllowedII = age > 18 ? true : false;
+
+//do-loop
+// the loop will first execute the body and then check the condition and while it's truthy, execute again.
+let i = 0;
+do {
+    alert (i);
+    i++;
+} while (i<3);
+
+//breaking the loop
+let sum = 0;
+while (true) {
+    let value = +prompt("Enter a number", '');
+    if(!value) break;
+    sum += value;
+}
+alert('Sum:' + sum);
+
+//continue the next iteration
+//it stops the current iteration and forces the loop to start a new one
+for (let i = 0;i<10;i++){
+    if(i % 2 == 0) continue;
+    alert(i);
+}
+
+for (let i = 0;i<10;i++){
+    if(i % 2){
+        alert(i);
+    }
+}
+
+//switch statement
+
+let numTest = 50;
+switch(numTest){
+    case 10:
+        alert('too small');
+        break;
+    case 100:
+        alert('too big');
+        break;
+    default:
+        alert("I donot know");
+}
+
+//function expression 
+let sayHi = function(){
+    alert("hello")
+};
+
+
 //insert text into html
 function onClickButton (){
     document.getElementById("demo").innerHTML = "Hello";
