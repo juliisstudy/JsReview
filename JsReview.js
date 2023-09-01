@@ -94,6 +94,60 @@ let sayHi = function(){
     alert("hello")
 };
 
+//arraw function
+let sumArr = (a,b) => a + b;
+
+//object 
+let user = {
+    name: "Juli",
+    age: 30
+}
+for (let key in user) {
+    alert(user[key]);
+    alert(key);
+}
+
+//constructor 
+function User(name) {
+    this.name = name;
+    this.isAdmin = false;
+    this.sayHi = function() {
+        alert("my name is:"+this.name);
+    }
+}
+
+let userNew = new User("Juli");
+userNew.sayHi();
+alert(user.name);
+
+
+let billion = 1_000_000_000;
+
+//spread 
+let arr = [3,5,6];
+alert(Math.max(...arr));
+
+//prototypal inheritance
+let animal = {
+    eats: true
+};
+let rabbit = {
+    jumps:true
+};
+rabbit._proto_ = animal;
+alert(rabbit.eats);
+
+
+
+//array
+let fruits = ["apple","orange","plum"];
+for (let fruit of fruits){
+    alert(fruit);
+}
+
+for (let key in arr){
+    alert(arr[key]);
+}
 
 //insert text into html
 function onClickButton (){
@@ -106,6 +160,10 @@ function doSomeMath(num1,num2){
     let z = num1 + num2 + PI;
     document.getElementById("result").innerHTML = z;
 }
+
+
+
+
 
 // create an object
 const person = {
