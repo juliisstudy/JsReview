@@ -17,7 +17,18 @@ export async function createGallery(){
         gallery.appendChild(photoElement);
     }
 
+
+   //choose favorite photo 
    const favoriteButton = document.createElement('button');
+   favoriteButton.textContent = 'Select your favorite pic';
+   favoriteButton.classList.add('favorite-button');
+   favoriteButton.addEventListener('click', async()=>{
+    const{addFavoriteCheckboxes} = await import('./favorite.js');
+    addFavoriteCheckboxes(gallery);
+    favoriteButton.remove();
+   })
+
+   gallery.appendChild(favoriteButton);
 
 
     return gallery;
