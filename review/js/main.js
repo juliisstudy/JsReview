@@ -138,3 +138,55 @@ function myFun(){
     const z=5;
 }
 
+//array
+const myArray =[]
+myArray[0] = "juli"
+myArray[1] =1001
+myArray[2]=false;
+const firstItem = myArray.shift();
+//delet the first item in the array
+myArray.splice(1,1);
+myArray.splice(1,1,42); // add 42 at the position at 1
+//splice(start, deleteCount, item1, item2)
+
+const myArray =[1,2,3,4,5,6]
+myArray.slice(2,5); //not include 5
+myArray.reverse();
+const newString = myArray.join(); //join the array items and become new string
+
+newString.split(",")
+
+const myArrayA=["A","B","C"];
+const myArrayB = ["D","B","c"];
+
+const newArray=myArrayB.concat(myArrayA);
+// concat two array into a new array
+const newArrayTwo = [...myArrayA,...myArrayB];
+//spread opreater
+
+//objects : key -value pairs in curly braces
+const myObj = {name:"juli"}
+console.log(myObj.name);
+
+const anotherObj ={
+    alive:true,
+    answer:43,
+    hobbies:["Eat","Sleep"],
+    beverage:{
+        morning:"coffee",
+        afternoon:"ice tea"
+    },
+    action:function(){
+        return `Time for ${this.beverage.morning}`
+    }
+}
+const vehicle={
+    wheels:4,
+    engin:function(){
+        return "vrrooom";
+    }
+}
+const truck = Object.create(vehicle)
+// constructor
+truck.doors=2;
+console.log(truck.wheels); //Inheritance
