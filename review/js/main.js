@@ -190,3 +190,110 @@ const truck = Object.create(vehicle)
 // constructor
 truck.doors=2;
 console.log(truck.wheels); //Inheritance
+
+class Pizza {
+    crust = "original"
+    #sauce = "traditional"  //private variable, cannot get access to public
+    constructor(pizzaType,size){
+        this.type = pizzaType;
+        this.size= size;
+        this.crust =crust;
+    
+        this.topping =[];
+    }
+    bake(){
+        console.log(`bake a ${this.size} ${this.crust} ${this.#sauce} crust pizza`)
+    }
+    getPizzaCrust(){
+        return this.crust;
+    }
+    setPizzaCrust(pizzaCrust){
+        this. crust = pizzaCrust;
+    }
+    getTopping(){
+        return this.topping;
+    }
+    setToppings(topping){
+        this.topping.push(topping)
+    }
+}
+
+const myPizza = new Pizza()
+myPizza.bake()
+myPizza.setToppings("sausage")
+myPizza.getPizzaCrust();
+
+class SpecialtyPizza extends Pizza {
+    constructor(pizzaSize){
+        super(pizzaSize);
+        this.type ="the works"
+
+    }
+    slice(){
+        console.log(`Our ${this.type} ${this.pizza} pizza`)
+    }
+
+}
+
+const mySpeacialty = new SpecialtyPizza("medium");
+mySpeacialty.slice();
+
+//Factory function
+function pizzaFactory(pizzaSize){
+    const crust = "original"
+    const size = pizzaSize;
+    return {
+        bake:()=>{
+            console.log(`baking a ${size} ${crust} pizza` )
+        }
+    }
+}
+const myPizzaTwo = pizzaFactory("small")
+myPizzaTwo.bake()
+
+//Json
+const myObjOne = {
+    name:"juli",
+    hobbies:["study","reading"],
+    hello: function(){
+        console.log("hello")
+    }
+}
+
+const sentJSON = JSON.stringify(myObjOne)
+
+const receiveJSON = JSON.parse(sentJSON)
+
+//catch error
+const makeError =() =>{
+    try{
+        const name = "juli"
+    }catch(error){
+        console.error(err);
+    }
+}
+makeError()
+
+//DOM Document object model
+const view1 = document.getElementById("view");
+const view2 = document.querySelector("#view2")
+
+view1.style.display ="flex"
+const sameViews = document.querySelectorAll(".view")
+const sameDives = view1.getElementsByTagName("div")
+
+const evenDivs = view1.querySelectorAll("div:nth-of-type(2n)");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
